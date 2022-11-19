@@ -14,7 +14,7 @@ Install:
 This package is a collection of generic functions to manipulate slices.
 
 
-## Slice/Replace
+## Splice/Replace
 
 ```go
 func Replace[E any](dest []E, start int, replace ...E) []E 
