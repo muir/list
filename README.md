@@ -31,6 +31,15 @@ new elements, growing or shrinking the list as needed.
 The `Beyond` methods allow the replacments to be beyond the len (and cap) of the
 original slice.  The slice will be extended (and filled) as needed.
 
+## Copy
+
+```go
+func Copy[T any](orig []T) []T
+```
+
+Copy is exactly what you would expect.  Given `nil`, it returns `nil`.  It does
+not allocate additional space.  Copies are shallow.
+
 ## Code stability
 
 This is brand new, but has 100% test coverage and is unlikely to be modifed except
