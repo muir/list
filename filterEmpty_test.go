@@ -52,4 +52,9 @@ func TestFilterEmptySlices(t *testing.T) {
 			assert.Equal(t, tc.want, got)
 		})
 	}
+	type stringSlice []string
+	type stringSliceSlice []stringSlice
+	assert.Equal(t, stringSliceSlice{{"a", "b"}}, list.FilterEmptySlices(stringSliceSlice{{"a", "b"}}))
+	type boolSliceSlice [][]bool
+	assert.Equal(t, boolSliceSlice{{true, false}}, list.FilterEmptySlices(boolSliceSlice{{}, {true, false}}))
 }
